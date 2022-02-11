@@ -1,0 +1,14 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - run: java -jar MServer-1.0-SNAPSHOT.jar
+      - name: run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
