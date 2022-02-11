@@ -10,7 +10,7 @@ jobs:
         with:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '11'
-      - run: java -jar MServer-1.0-SNAPSHOT.jar
+      - run: java -jar MServer-1.0-SNAPSHOT.jar &
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
